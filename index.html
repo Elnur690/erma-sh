@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erma Shop - Quality Products at Great Prices</title>
+    <meta name="description" content="Discover quality products at great prices. Shop our wide selection of items with free shipping, secure payments, and easy returns." />
+    <meta name="author" content="Erma Shop" />
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Erma Shop" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Icons -->
+    <link rel="icon" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/placeholder.svg" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Erma Shop - Quality Products at Great Prices" />
+    <meta property="og:description" content="Discover quality products at great prices. Shop our wide selection of items with free shipping, secure payments, and easy returns." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://erma.shop/og-image.jpg" />
+    <meta property="og:url" content="https://erma.shop" />
+    <meta property="og:site_name" content="Erma Shop" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Erma Shop - Quality Products at Great Prices" />
+    <meta name="twitter:description" content="Discover quality products at great prices. Shop our wide selection of items with free shipping, secure payments, and easy returns." />
+    <meta name="twitter:image" content="https://erma.shop/og-image.jpg" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            }, function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
